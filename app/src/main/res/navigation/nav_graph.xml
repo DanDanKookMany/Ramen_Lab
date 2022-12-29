@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/fragment_home">
+
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="com.ddk.ramenlab.HomeFragment"
+        android:label="홈"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/fragment_board"
+        android:name="com.ddk.ramenlab.BoardFragment"
+        android:label="게시판"
+        tools:layout="@layout/fragment_board" />
+    <fragment
+        android:id="@+id/fragment_profile"
+        android:name="com.ddk.ramenlab.ProfileFragment"
+        android:label="프로필"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>
