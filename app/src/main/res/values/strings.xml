@@ -1,5 +1,12 @@
 <resources>
+    <!--  app name  -->
     <string name="app_name">RamenLab</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <!--  menu toolbar  -->
+    <string name="alert">알림</string>
+    <!--  bottom nav menu  -->
+    <string name="home">홈</string>
+    <string name="board">게시판</string>
+    <string name="profile">프로필</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
