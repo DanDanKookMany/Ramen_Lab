@@ -27,7 +27,7 @@
     </style>
 
     <style name="bottomNavigationViewStyle">
-        <item name="android:background">@color/black</item>
+        <item name="android:background">@color/white</item>
         <item name="itemIconTint">@drawable/selector_bottom_navigation</item>
         <item name="itemTextColor">@drawable/selector_bottom_navigation</item>
         <item name="android:fontFamily">@font/spoqa_font_family</item>
