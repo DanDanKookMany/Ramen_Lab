@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.ddk.ramenlab.adapter.NewRamenCardAdapter
 import com.ddk.ramenlab.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,6 +19,8 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(inflater)
+
+        binding.newRamenRecyclerView.adapter = NewRamenCardAdapter()
 
         return binding.root
     }
