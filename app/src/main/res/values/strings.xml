@@ -7,6 +7,17 @@
     <string name="home">홈</string>
     <string name="board">게시판</string>
     <string name="profile">프로필</string>
+    <!--  home fragment  -->
+    <string name="homeMainText1">나만을</string>
+    <string name="homeMainText2">위한 라면,</string>
+    <string name="homeMainText3">라면연구소</string>
+    <string name="findMyRamenBtn">내가먹고싶은라면찾기</string>
+    <string name="ramenRankingText">라면 순위</string>
+    <string name="ramenRankingBtn">전체보기</string>
+    <string name="newRamenText">새로 출시된 라면</string>
+    <string name="newRamenBtn">전체보기</string>
 
+    <!--  etc  -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
