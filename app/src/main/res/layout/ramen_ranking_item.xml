@@ -17,8 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ramen_ranking_card"
-        tools:srcCompat="@drawable/ramen_ranking_card" />
+        app:srcCompat="@drawable/ramen_ranking_item_card"
+        tools:srcCompat="@drawable/ramen_ranking_item_card" />
 
     <TextView
         android:id="@+id/ramen_ranking_item_ranking"

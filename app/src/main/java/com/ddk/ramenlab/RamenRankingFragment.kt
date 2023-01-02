@@ -27,6 +27,8 @@ class RamenRankingFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val act = activity as MainActivity
+        act.supportActionBar?.hide()
         // Inflate the layout for this fragment
         binding = FragmentRamenRankingBinding.inflate(inflater)
 
@@ -98,5 +100,7 @@ class RamenRankingFragment : Fragment() {
         override fun getItemCount() = dataSet.size - 3
 
     }
+
+
 }
 
