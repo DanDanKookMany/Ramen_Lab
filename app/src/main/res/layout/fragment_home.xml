@@ -96,6 +96,39 @@
             android:background="@color/strawberry_light"
             android:padding="28dp">
 
+            <TextView
+                android:id="@+id/ramen_ranking_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/spoqahansansneobold"
+                android:text="@string/ramenRankingText"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/ramen_ranking_btn"
+                android:layout_width="74dp"
+                android:layout_height="28dp"
+                android:backgroundTint="@color/coral_light"
+                android:fontFamily="@font/spoqahansansneobold"
+                android:includeFontPadding="false"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                android:stateListAnimator="@null"
+                android:text="@string/ramenRankingBtn"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/coral_dark"
+                android:textSize="14sp"
+                app:cornerRadius="15dp"
+                app:iconPadding="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ramen_ranking_text"
+                tools:ignore="TouchTargetSizeCheck,TextContrastCheck,DuplicateSpeakableTextCheck" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="26dp"
@@ -336,40 +369,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/ramen_ranking_btn"
                 tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
-
-            <TextView
-                android:id="@+id/ramen_ranking_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/spoqahansansneobold"
-                android:text="@string/ramenRankingText"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/ramen_ranking_btn"
-                android:layout_width="74dp"
-                android:layout_height="28dp"
-                android:backgroundTint="@color/coral_light"
-                android:fontFamily="@font/spoqahansansneobold"
-                android:includeFontPadding="false"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:paddingLeft="0dp"
-                android:paddingTop="0dp"
-                android:paddingRight="0dp"
-                android:paddingBottom="0dp"
-                android:stateListAnimator="@null"
-                android:text="@string/ramenRankingBtn"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:textColor="@color/coral_dark"
-                android:textSize="14sp"
-                app:cornerRadius="15dp"
-                app:iconPadding="0dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/ramen_ranking_text"
-                tools:ignore="TouchTargetSizeCheck,TextContrastCheck,DuplicateSpeakableTextCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

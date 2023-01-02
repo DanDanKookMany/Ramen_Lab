@@ -21,8 +21,6 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(inflater)
 
-        binding.newRamenRecyclerView.adapter = NewRamenAdapter()
-
         // get best 3 ramen and sort
         val bestRamen = RamenData.topRamen.filter { it.ranking!! <= 3 }.sortedBy { it.ranking }
 
@@ -35,6 +33,9 @@ class HomeFragment : Fragment() {
         binding.goldRamenName.text = bestRamen[0].name
         binding.silverRamenName.text = bestRamen[1].name
         binding.bronzeRamenName.text = bestRamen[2].name
+
+        // set new ramen recycler view
+        binding.newRamenRecyclerView.adapter = NewRamenAdapter()
 
         return binding.root
     }
