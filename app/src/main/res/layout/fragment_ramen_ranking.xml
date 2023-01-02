@@ -8,6 +8,15 @@
     android:orientation="vertical"
     tools:context=".RamenRankingFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/ramen_ranking_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:menu="@menu/menu_share_toolbar" />
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,23 +26,45 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/ramen_ranking_toolbar"
+            <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/black"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:menu="@menu/menu_share_toolbar" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="70dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ramen_card"
+                    android:orientation="vertical">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/ramen_ranking_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="60dp"
                 android:fontFamily="@font/gmarketsansbold"
                 android:text="우리의 입맛을 사로잡은"
                 android:textAlignment="center"
@@ -42,7 +73,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ramen_ranking_toolbar" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -58,16 +89,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:src="@drawable/ramen_card"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <ImageView
                 android:id="@+id/gold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -81,10 +102,10 @@
                 android:id="@+id/silver"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
                 android:layout_marginTop="40dp"
+                android:layout_marginEnd="260dp"
                 android:src="@drawable/ic_rank_2"
-                app:layout_constraintEnd_toStartOf="@+id/gold"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -93,39 +114,123 @@
                 android:id="@+id/bronze"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="240dp"
                 android:layout_marginTop="40dp"
                 android:src="@drawable/ic_rank_3"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/gold"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <TextView
                 android:id="@+id/gold_share"
-                android:layout_width="wrap_content"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="140dp"
                 android:fontFamily="@font/gmarketsansbold"
-                android:text="15.6%"
+                android:text="16.9%"
+                android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="10sp"
-                app:layout_constraintEnd_toEndOf="@+id/gold"
-                app:layout_constraintHorizontal_bias="0.19"
                 app:layout_constraintStart_toStartOf="@+id/gold"
                 app:layout_constraintTop_toTopOf="@+id/gold" />
 
             <TextView
                 android:id="@+id/silver_share"
-                android:layout_width="wrap_content"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
                 android:layout_marginTop="112dp"
                 android:fontFamily="@font/spoqahansansneobold"
-                android:text="9.1%"
+                android:text="1%"
+                android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="10sp"
-                app:layout_constraintEnd_toEndOf="@+id/silver"
-                app:layout_constraintHorizontal_bias="0.298"
                 app:layout_constraintStart_toStartOf="@+id/silver"
                 app:layout_constraintTop_toTopOf="@+id/silver" />
+
+            <TextView
+                android:id="@+id/bronze_share"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="112dp"
+                android:fontFamily="@font/gmarketsansbold"
+                android:text="6.9%"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/bronze"
+                app:layout_constraintTop_toTopOf="@+id/bronze" />
+
+            <ImageView
+                android:id="@+id/gold_image"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="48dp"
+                android:src="@drawable/ramen1"
+                app:layout_constraintEnd_toEndOf="@+id/gold"
+                app:layout_constraintHorizontal_bias="0.489"
+                app:layout_constraintStart_toStartOf="@+id/gold"
+                app:layout_constraintTop_toTopOf="@+id/gold" />
+
+            <ImageView
+                android:id="@+id/silver_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="44dp"
+                android:src="@drawable/ramen1"
+                app:layout_constraintEnd_toEndOf="@+id/silver"
+                app:layout_constraintHorizontal_bias="0.513"
+                app:layout_constraintStart_toStartOf="@+id/silver"
+                app:layout_constraintTop_toTopOf="@+id/silver" />
+
+            <ImageView
+                android:id="@+id/bronze_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/ramen1"
+                app:layout_constraintEnd_toEndOf="@+id/bronze"
+                app:layout_constraintStart_toStartOf="@+id/bronze"
+                app:layout_constraintTop_toTopOf="@+id/bronze" />
+
+            <TextView
+                android:id="@+id/silver_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="14dp"
+                android:fontFamily="@font/gmarketsansbold"
+                android:text="진라면"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="@+id/silver"
+                app:layout_constraintStart_toEndOf="@+id/silver_share" />
+
+            <TextView
+                android:id="@+id/gold_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="14dp"
+                android:fontFamily="@font/gmarketsansbold"
+                android:text="진라면"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="@+id/gold"
+                app:layout_constraintStart_toEndOf="@+id/gold_share" />
+
+            <TextView
+                android:id="@+id/bronze_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="14dp"
+                android:fontFamily="@font/gmarketsansbold"
+                android:text="진라면"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="@+id/bronze"
+                app:layout_constraintStart_toEndOf="@+id/bronze_share" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
