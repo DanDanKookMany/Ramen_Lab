@@ -30,7 +30,7 @@
                 android:id="@+id/ramen_image"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:background="@color/gray_light"
+                android:background="@color/gray"
                 android:importantForAccessibility="no"
                 android:padding="10dp"
 

@@ -10,14 +10,14 @@ import com.ddk.ramenlab.R
 import com.ddk.ramenlab.data.RamenData
 
 
-class NewRamenCardAdapter : RecyclerView.Adapter<NewRamenCardAdapter.NewRamenCardViewHolder>() {
+class NewRamenAdapter : RecyclerView.Adapter<NewRamenAdapter.NewRamenViewHolder>() {
 
     private val dataset = RamenData.newRamen
 
     /**
      * Initialize view elements
      */
-    class NewRamenCardViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class NewRamenViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val ramenImage: ImageView = view.findViewById(R.id.ramen_image)
         val ramenName: TextView = view.findViewById(R.id.ramen_name)
     }
@@ -25,18 +25,18 @@ class NewRamenCardAdapter : RecyclerView.Adapter<NewRamenCardAdapter.NewRamenCar
     /**
      * Create new views
      */
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewRamenCardViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewRamenViewHolder {
         // create a new view
         val adapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.new_ramen_item, parent, false)
 
-        return NewRamenCardViewHolder(adapterLayout)
+        return NewRamenViewHolder(adapterLayout)
     }
 
     /**
      * Replace the contents of a view
      */
-    override fun onBindViewHolder(holder: NewRamenCardViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: NewRamenViewHolder, position: Int) {
         val item = dataset[position]
 
         holder.ramenImage.setImageResource(item.imageResourceId)
