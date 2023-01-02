@@ -10,8 +10,7 @@ import com.ddk.ramenlab.R
 import com.ddk.ramenlab.data.RamenData
 
 
-class NewRamenCardAdapter
-    : RecyclerView.Adapter<NewRamenCardAdapter.NewRamenCardViewHolder>() {
+class NewRamenCardAdapter : RecyclerView.Adapter<NewRamenCardAdapter.NewRamenCardViewHolder>() {
 
     private val dataset = RamenData.newRamen
 
