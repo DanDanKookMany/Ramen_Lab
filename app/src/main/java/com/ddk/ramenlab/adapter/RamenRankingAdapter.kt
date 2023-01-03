@@ -1,6 +1,5 @@
 package com.ddk.ramenlab.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,9 +10,7 @@ import com.ddk.ramenlab.R
 import com.ddk.ramenlab.data.RamenData
 
 
-class RamenRankingAdapter(
-    private val context: Context
-) : RecyclerView.Adapter<RamenRankingAdapter.RamenRankingViewHolder>() {
+class RamenRankingAdapter : RecyclerView.Adapter<RamenRankingAdapter.RamenRankingViewHolder>() {
 
     private val dataset = RamenData.ranking
 

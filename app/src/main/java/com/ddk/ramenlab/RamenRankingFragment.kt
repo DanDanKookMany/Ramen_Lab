@@ -9,6 +9,11 @@ import com.ddk.ramenlab.adapter.RamenRankingAdapter
 import com.ddk.ramenlab.data.RamenData
 import com.ddk.ramenlab.databinding.FragmentRamenRankingBinding
 
+/**
+ * 버그 노트
+ * 1. Ranking fragment 사용 후 toolbar 가 사라지는 버그 있음.
+ * 2. 메달 부분의 share 표시는 공간 문제로 잠시 보류함
+ */
 class RamenRankingFragment : Fragment() {
 
     private lateinit var binding: FragmentRamenRankingBinding
@@ -22,6 +27,7 @@ class RamenRankingFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentRamenRankingBinding.inflate(inflater)
 
+        // get ramen ranking data
         val ramenRankingList = RamenData.ranking
 
         // set gold ramen
@@ -40,7 +46,7 @@ class RamenRankingFragment : Fragment() {
         // binding.bronzeShare.text = ramenRankingList[2].share
 
         // set ramen ranking recycler view
-        binding.ramenRankingRecycler.adapter = RamenRankingAdapter(requireContext())
+        binding.ramenRankingRecycler.adapter = RamenRankingAdapter()
 
         return binding.root
     }
