@@ -38,6 +38,8 @@ class HomeFragment : Fragment() {
 
         // set new ramen recycler view
         binding.newRamenRecyclerView.adapter = NewRamenAdapter()
+
+        // move to ramen ranking fragment
         binding.ramenRankingBtn.setOnClickListener {
             findNavController().navigate(R.id.action_fragment_home_to_ramenRankingFragment)
         }

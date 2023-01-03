@@ -17,6 +17,9 @@
     <string name="newRamenText">새로 출시된 라면</string>
     <string name="newRamenBtn">전체보기</string>
     <string name="more">더 알아보기</string>
+    <!--  ranking fragment  -->
+    <string name="ranking_title_1">우리의 입맛을 사로잡은</string>
+    <string name="ranking_title_2">인기 라면</string>
 
     <!--  etc  -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
