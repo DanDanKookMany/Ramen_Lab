@@ -33,8 +33,7 @@
                 android:background="@color/gray"
                 android:importantForAccessibility="no"
                 android:padding="10dp"
-
-                tools:srcCompat="@drawable/ramen1" />
+                tools:ignore="ImageContrastCheck" />
         </com.google.android.material.card.MaterialCardView>
 
 
@@ -50,8 +49,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ramen_image_cover"
-            tools:ignore="TextContrastCheck"
-            tools:text="진라면" />
+            tools:ignore="TextContrastCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
