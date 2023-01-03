@@ -9,7 +9,11 @@
         android:id="@+id/fragment_home"
         android:name="com.ddk.ramenlab.HomeFragment"
         android:label="홈"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_fragment_home_to_ramenRankingFragment"
+            app:destination="@id/ramenRankingFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_board"
         android:name="com.ddk.ramenlab.BoardFragment"
@@ -20,5 +24,10 @@
         android:name="com.ddk.ramenlab.ProfileFragment"
         android:label="프로필"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/ramenRankingFragment"
+        android:name="com.ddk.ramenlab.RamenRankingFragment"
+        android:label="fragment_ramen_ranking"
+        tools:layout="@layout/fragment_ramen_ranking" />
 
 </navigation>
