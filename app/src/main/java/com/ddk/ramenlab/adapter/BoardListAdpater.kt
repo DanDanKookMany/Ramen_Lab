@@ -8,30 +8,37 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ddk.ramenlab.R
 import com.ddk.ramenlab.data.BoardData
 
-class BoardListAdapter : RecyclerView.Adapter<BoardListAdapter.BoardListViewHolderClass>() {
+class BoardListAdapter : RecyclerView.Adapter<BoardListAdapter.BoardListViewHolder>() {
 
     private val dataset = BoardData.newBoard
 
-    class BoardListViewHolderClass(view: View) : RecyclerView.ViewHolder(view) {
-        val boardTitle: TextView = view.findViewById(R.id.title)
-        val boardContent : TextView = view.findViewById(R.id.content)
+    /**
+     * Initialize view elements
+     */
+    class BoardListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val boardTitle: TextView = view.findViewById(R.id.board_title)
+        val boardContent: TextView = view.findViewById(R.id.board_content)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoardListViewHolderClass {
+    /**
+     * Create new views
+     */
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoardListViewHolder {
         val adapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.board_list_item, parent, false)
 
-        return BoardListViewHolderClass(adapterLayout)
+        return BoardListViewHolder(adapterLayout)
     }
 
-    override fun onBindViewHolder(holder: BoardListViewHolderClass, position: Int) {
+    /**
+     * Replace the contents of a view
+     */
+    override fun onBindViewHolder(holder: BoardListViewHolder, position: Int) {
         val item = dataset[position]
 
-        holder.boardTitle.text = item.title
-        holder.boardContent.text = item.content
+        holder.boardTitle.text = item.title         // 글 제목
+        holder.boardContent.text = item.content     // 글 내용
     }
 
-    override fun getItemCount(): Int {
-        return dataset.size
-    }
+    override fun getItemCount() = dataset.size
 }
