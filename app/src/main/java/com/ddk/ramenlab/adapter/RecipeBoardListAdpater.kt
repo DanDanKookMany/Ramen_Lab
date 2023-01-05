@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ddk.ramenlab.R
-import com.ddk.ramenlab.data.BoardData
+import com.ddk.ramenlab.data.RecipeBoardData
 
-class BoardListAdapter : RecyclerView.Adapter<BoardListAdapter.BoardListViewHolder>() {
+class RecipeBoardListAdapter : RecyclerView.Adapter<RecipeBoardListAdapter.BoardListViewHolder>() {
 
-    private val dataset = BoardData.newBoard
+    private val dataset = RecipeBoardData.newBoard
 
     /**
      * Initialize view elements
@@ -18,6 +18,7 @@ class BoardListAdapter : RecyclerView.Adapter<BoardListAdapter.BoardListViewHold
     class BoardListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val boardTitle: TextView = view.findViewById(R.id.board_title)
         val boardContent: TextView = view.findViewById(R.id.board_content)
+        val chatCount: TextView? = view.findViewById(R.id.chat_count)
     }
 
     /**
@@ -38,6 +39,7 @@ class BoardListAdapter : RecyclerView.Adapter<BoardListAdapter.BoardListViewHold
 
         holder.boardTitle.text = item.title         // 글 제목
         holder.boardContent.text = item.content     // 글 내용
+        holder.chatCount?.text = item.chatCount.toString() ?: "0"
     }
 
     override fun getItemCount() = dataset.size
