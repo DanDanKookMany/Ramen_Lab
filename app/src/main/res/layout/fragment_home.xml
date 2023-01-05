@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/silver_light"
+    android:background="@color/gray"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -76,6 +76,7 @@
                 android:paddingTop="15dp"
                 android:paddingRight="20dp"
                 android:paddingBottom="15dp"
+                android:stateListAnimator="@null"
                 android:text="@string/findMyRamenBtn"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 app:cornerRadius="26dp"
@@ -117,6 +118,7 @@
                 android:paddingTop="0dp"
                 android:paddingRight="0dp"
                 android:paddingBottom="0dp"
+                android:stateListAnimator="@null"
                 android:text="@string/ramenRankingBtn"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@color/coral_dark"
@@ -126,6 +128,247 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/ramen_ranking_text"
                 tools:ignore="TouchTargetSizeCheck,TextContrastCheck,DuplicateSpeakableTextCheck" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginBottom="-34dp"
+                android:stateListAnimator="@null"
+                app:cardCornerRadius="13dp"
+                app:cardElevation="3dp"
+                app:cardMaxElevation="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/silver_medal_circle"
+                app:layout_constraintEnd_toEndOf="@+id/silver_medal_circle"
+                app:layout_constraintStart_toStartOf="@+id/silver_medal_circle">
+
+                <ImageView
+                    android:id="@+id/silver_medal_crown"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:importantForAccessibility="no"
+                    android:padding="3dp"
+                    app:srcCompat="@drawable/silver_medal"
+                    tools:ignore="ImageContrastCheck" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <ImageView
+                android:id="@+id/silver_medal_circle"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginBottom="-20dp"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toBottomOf="@+id/silver_ramen_name"
+                app:layout_constraintEnd_toEndOf="@+id/silver_more_btn"
+                app:layout_constraintStart_toStartOf="@+id/silver_more_btn"
+                app:srcCompat="@drawable/silver_circle"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageView
+                android:id="@+id/silver_medal_ramen_image"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_marginBottom="26dp"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toBottomOf="@id/silver_medal_circle"
+                app:layout_constraintLeft_toLeftOf="@id/silver_medal_circle"
+                app:layout_constraintRight_toRightOf="@id/silver_medal_circle"
+                app:layout_constraintTop_toTopOf="@id/silver_medal_circle"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/silver_ramen_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/spoqahansansneobold"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/silver_more_btn"
+                app:layout_constraintEnd_toEndOf="@+id/silver_more_btn"
+                app:layout_constraintStart_toStartOf="@+id/silver_more_btn" />
+
+            <Button
+                android:id="@+id/silver_more_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/spoqahansansneobold"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="0dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="0dp"
+                android:stateListAnimator="@null"
+                android:text="@string/more"
+                android:textColor="@color/silver_dark"
+                app:cornerRadius="20dp"
+                app:iconPadding="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/ramen_ranking_text"
+                tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck,TouchTargetSizeCheck" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginBottom="-32dp"
+                android:stateListAnimator="@null"
+                app:cardCornerRadius="13dp"
+                app:cardElevation="3dp"
+                app:cardMaxElevation="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/gold_medal_circle"
+                app:layout_constraintEnd_toEndOf="@+id/gold_medal_circle"
+                app:layout_constraintStart_toStartOf="@+id/gold_medal_circle">
+
+                <ImageView
+                    android:id="@+id/gold_medal_crown"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:importantForAccessibility="no"
+                    android:padding="3dp"
+                    app:srcCompat="@drawable/gold_crown"
+                    tools:ignore="ImageContrastCheck" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <ImageView
+                android:id="@+id/gold_medal_circle"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toTopOf="@+id/gold_more_btn"
+                app:layout_constraintEnd_toEndOf="@+id/gold_more_btn"
+                app:layout_constraintStart_toStartOf="@+id/gold_more_btn"
+                app:srcCompat="@drawable/gold_circle"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageView
+                android:id="@+id/gold_medal_ramen_image"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_marginBottom="26dp"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toBottomOf="@id/gold_medal_circle"
+                app:layout_constraintLeft_toLeftOf="@id/gold_medal_circle"
+                app:layout_constraintRight_toRightOf="@id/gold_medal_circle"
+                app:layout_constraintTop_toTopOf="@id/gold_medal_circle"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/gold_ramen_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/spoqahansansneobold"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/gold_more_btn"
+                app:layout_constraintEnd_toEndOf="@+id/gold_more_btn"
+                app:layout_constraintStart_toStartOf="@+id/gold_more_btn" />
+
+            <Button
+                android:id="@+id/gold_more_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/spoqahansansneobold"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="0dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="0dp"
+                android:stateListAnimator="@null"
+                android:text="@string/more"
+                android:textColor="@color/gold_dark"
+                app:cornerRadius="20dp"
+                app:iconPadding="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/bronze_more_btn"
+                app:layout_constraintStart_toEndOf="@+id/silver_more_btn"
+                tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginBottom="-34dp"
+                android:stateListAnimator="@null"
+                app:cardCornerRadius="13dp"
+                app:cardElevation="3dp"
+                app:cardMaxElevation="3dp"
+                app:layout_constraintBottom_toTopOf="@+id/bronze_medal_circle"
+                app:layout_constraintEnd_toEndOf="@+id/bronze_medal_circle"
+                app:layout_constraintStart_toStartOf="@+id/bronze_medal_circle">
+
+                <ImageView
+                    android:id="@+id/bronze_medal_crown"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:importantForAccessibility="no"
+                    android:padding="3dp"
+                    app:srcCompat="@drawable/bronze_medal"
+                    tools:ignore="ImageContrastCheck" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <ImageView
+                android:id="@+id/bronze_medal_circle"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginBottom="-20dp"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toBottomOf="@+id/bronze_ramen_name"
+                app:layout_constraintEnd_toEndOf="@+id/bronze_more_btn"
+                app:layout_constraintStart_toStartOf="@+id/bronze_more_btn"
+                app:srcCompat="@drawable/bronze_circle"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageView
+                android:id="@+id/bronze_medal_ramen_image"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_marginBottom="26dp"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toBottomOf="@id/bronze_medal_circle"
+                app:layout_constraintLeft_toLeftOf="@id/bronze_medal_circle"
+                app:layout_constraintRight_toRightOf="@id/bronze_medal_circle"
+                app:layout_constraintTop_toTopOf="@id/bronze_medal_circle"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/bronze_ramen_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/spoqahansansneobold"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/bronze_more_btn"
+                app:layout_constraintEnd_toEndOf="@+id/bronze_more_btn"
+                app:layout_constraintStart_toStartOf="@+id/bronze_more_btn" />
+
+            <Button
+                android:id="@+id/bronze_more_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/spoqahansansneobold"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="0dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="0dp"
+                android:stateListAnimator="@null"
+                android:text="@string/more"
+                android:textColor="@color/bronze_dark"
+                app:cornerRadius="20dp"
+                app:iconPadding="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ramen_ranking_btn"
+                tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Space
@@ -161,6 +404,7 @@
                 android:paddingTop="0dp"
                 android:paddingRight="0dp"
                 android:paddingBottom="0dp"
+                android:stateListAnimator="@null"
                 android:text="@string/newRamenBtn"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@color/coral_dark"
@@ -177,7 +421,7 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal"
-                android:scrollbars="horizontal"
+                android:scrollbars="none"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
