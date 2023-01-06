@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.ddk.ramenlab.adapter.BoardListAdapter
+import com.ddk.ramenlab.adapter.AnnounceBoardListAdapter
+import com.ddk.ramenlab.adapter.ChatBoardListAdpapter
+import com.ddk.ramenlab.adapter.RecipeBoardListAdapter
 import com.ddk.ramenlab.databinding.FragmentBoardBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,26 +30,31 @@ class BoardFragment : Fragment() {
 
         // 화면을 처음 키면 레시피가 선택되어있도록 지정
         recipeBtn.isSelected = true
+        binding.boardRecyclerView.adapter = RecipeBoardListAdapter()
 
         recipeBtn.setOnClickListener {
             recipeBtn.isSelected = true
             chatBtn.isSelected = false
             announceBtn.isSelected = false
+
+            binding.boardRecyclerView.adapter = RecipeBoardListAdapter()
         }
 
         chatBtn.setOnClickListener {
             chatBtn.isSelected = true
             recipeBtn.isSelected = false
             announceBtn.isSelected = false
+
+            binding.boardRecyclerView.adapter = ChatBoardListAdpapter()
         }
 
         announceBtn.setOnClickListener {
             announceBtn.isSelected = true
             recipeBtn.isSelected = false
             chatBtn.isSelected = false
-        }
 
-        binding.boardRecyclerView.adapter = BoardListAdapter()
+            binding.boardRecyclerView.adapter = AnnounceBoardListAdapter()
+        }
 
         return binding.root
     }
