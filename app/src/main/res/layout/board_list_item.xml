@@ -34,17 +34,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="3dp"
                 android:fontFamily="@font/spoqahansansneomedium"
-                android:text="TITLE"
                 android:textColor="@color/black"
-                android:textSize="16dp" />
+                android:textSize="16sp"
+                tools:text="TITLE" />
 
             <TextView
                 android:id="@+id/board_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="content"
                 android:textColor="@android:color/darker_gray"
-                android:textSize="13dp" />
+                android:textSize="13sp"
+                tools:ignore="TextContrastCheck"
+                tools:text="content" />
 
         </LinearLayout>
 
@@ -55,13 +56,14 @@
             android:layout_gravity="center"
             android:background="@drawable/ic_chatteardrop"
             android:gravity="center"
-            android:text="1"
             android:textColor="@color/gray_dark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.157"
             app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextContrastCheck"
+            tools:text="1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
