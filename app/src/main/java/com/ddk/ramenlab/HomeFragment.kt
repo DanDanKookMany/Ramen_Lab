@@ -40,7 +40,8 @@ class HomeFragment : Fragment() {
 
         // move to ramen ranking fragment
         binding.ramenRankingBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_fragment_home_to_ramenRankingFragment)
+            val action = HomeFragmentDirections.actionFragmentHomeToRamenRankingFragment()
+            findNavController().navigate(action)
         }
 
         return binding.root

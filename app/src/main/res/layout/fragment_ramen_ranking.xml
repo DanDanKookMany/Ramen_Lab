@@ -311,9 +311,13 @@
                 android:id="@+id/ramen_ranking_recycler"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:layout_weight="1"
+                android:clipToPadding="false"
                 android:background="@drawable/ramen_ranking_card"
                 android:paddingTop="150dp"
+                tools:listitem="@layout/ramen_ranking_item"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
         </LinearLayout>
