@@ -1,7 +1,6 @@
 package com.ddk.ramenlab
 
 import android.os.Bundle
-import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.fragment.NavHostFragment
@@ -21,9 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Setup action bar - Replace title with app icon
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
-        supportActionBar!!.setIcon(R.drawable.ic_app_title)
+        setSupportActionBar(binding.mainToolbar.toolbar)
 
         // Setup bottom navigation bar
         val host: NavHostFragment = supportFragmentManager
@@ -32,13 +29,5 @@ class MainActivity : AppCompatActivity() {
 
         // Inactivate dark mode
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-    }
-
-    /**
-     * 메뉴 리소스 XML 의 내용을 앱바(App Bar)에 반영
-     */
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_toolbar, menu)
-        return true
     }
 }

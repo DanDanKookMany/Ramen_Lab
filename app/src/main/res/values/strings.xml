@@ -20,6 +20,10 @@
     <!--  ranking fragment  -->
     <string name="ranking_title_1">우리의 입맛을 사로잡은</string>
     <string name="ranking_title_2">인기 라면</string>
+    <!--  board fragment  -->
+    <string name="recipe_btn">레시피</string>
+    <string name="chat_btn">잡담</string>
+    <string name="announce_btn">공지</string>
 
     <!--  etc  -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
