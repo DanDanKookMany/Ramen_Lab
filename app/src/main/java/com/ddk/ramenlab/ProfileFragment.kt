@@ -21,4 +21,11 @@ class ProfileFragment : Fragment() {
 
         return binding.root
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        val act = activity as MainActivity
+        act.supportActionBar?.show()
+    }
 }

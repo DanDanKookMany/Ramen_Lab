@@ -18,7 +18,11 @@
         android:id="@+id/fragment_board"
         android:name="com.ddk.ramenlab.BoardFragment"
         android:label="게시판"
-        tools:layout="@layout/fragment_board" />
+        tools:layout="@layout/fragment_board">
+        <action
+            android:id="@+id/action_fragment_board_to_boardReadFragment"
+            app:destination="@id/boardReadFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_profile"
         android:name="com.ddk.ramenlab.ProfileFragment"
@@ -29,5 +33,10 @@
         android:name="com.ddk.ramenlab.RamenRankingFragment"
         android:label="fragment_ramen_ranking"
         tools:layout="@layout/fragment_ramen_ranking" />
+    <fragment
+        android:id="@+id/boardReadFragment"
+        android:name="com.ddk.ramenlab.BoardReadFragment"
+        android:label="fragment_board_read"
+        tools:layout="@layout/fragment_board_read" />
 
 </navigation>

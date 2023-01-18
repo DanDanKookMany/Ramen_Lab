@@ -30,14 +30,14 @@ class BoardFragment : Fragment() {
 
         // 화면을 처음 키면 레시피가 선택되어있도록 지정
         recipeBtn.isSelected = true
-        binding.boardRecyclerView.adapter = RecipeBoardListAdapter()
+        binding.boardRecyclerView.adapter = RecipeBoardListAdapter(this)
 
         recipeBtn.setOnClickListener {
             recipeBtn.isSelected = true
             chatBtn.isSelected = false
             announceBtn.isSelected = false
 
-            binding.boardRecyclerView.adapter = RecipeBoardListAdapter()
+            binding.boardRecyclerView.adapter = RecipeBoardListAdapter(this)
         }
 
         chatBtn.setOnClickListener {
@@ -57,5 +57,12 @@ class BoardFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        val act = activity as MainActivity
+        act.supportActionBar?.show()
     }
 }
