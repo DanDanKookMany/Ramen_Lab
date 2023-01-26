@@ -1,16 +1,14 @@
 package com.ddk.ramenlab.adapter
 
-import android.os.Bundle
-import android.util.Log
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.os.bundleOf
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.setFragmentResult
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.ddk.ramenlab.BoardReadActivity
 import com.ddk.ramenlab.R
 import com.ddk.ramenlab.data.RecipeBoardData
 
@@ -51,8 +49,8 @@ class RecipeBoardListAdapter(
         holder.chatCount?.text = item.chatCount.toString() ?: "0"
 
         holder.itemView.setOnClickListener {
-            fragment.setFragmentResult("result", bundleOf("title" to item.title, "content" to item.content))
-            fragment.findNavController().navigate(R.id.action_fragment_board_to_boardReadFragment)
+            val intent = Intent(holder.itemView?.context, BoardReadActivity::class.java)
+            ContextCompat.startActivity(holder.itemView.context, intent, null)
         }
     }
 
