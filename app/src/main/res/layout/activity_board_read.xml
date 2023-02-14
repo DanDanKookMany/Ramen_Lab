@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".BoardReadActivity">
-
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/board_toolbar"
@@ -17,184 +16,208 @@
         android:theme="?attr/actionBarTheme"
         app:menu="@menu/menu_share_toolbar" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="423dp"
-        android:windowSoftInputMode="adjustPan">
+        android:layout_height="match_parent"
+        android:layout_below="@id/board_toolbar">
 
-        <ImageView
-            android:id="@+id/board_profile_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/img_board_profile"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/board_read_writer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/spoqahansansneoregular"
-            android:text="구운오니"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.009"
-            app:layout_constraintStart_toEndOf="@+id/board_profile_img"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/board_read_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/spoqahansansneobold"
-            android:text="짜파게티에 맛소금 넣으세요;;;;;;"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.166"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/board_read_writer" />
-
-        <TextView
-            android:id="@+id/board_read_tag1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/ic_board_tag"
-            android:fontFamily="@font/spoqahansansneobold"
-            android:gravity="center"
-            android:text="#존맛탱"
-            android:textColor="#dd6e51"
-            android:textSize="13sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/board_read_title" />
-
-        <TextView
-            android:id="@+id/board_read_tag2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/ic_board_tag"
-            android:fontFamily="@font/spoqahansansneobold"
-            android:gravity="center"
-            android:text="#짜파게티"
-            android:textColor="#dd6e51"
-            android:textSize="13sp"
-            app:layout_constraintStart_toEndOf="@+id/board_read_tag1"
-            app:layout_constraintTop_toBottomOf="@+id/board_read_title" />
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewpager_recipe"
-            android:layout_width="355dp"
-            android:layout_height="184dp"
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/board_read_tag2" />
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/viewpager_tap"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:layout_marginLeft="170dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="170dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewpager_recipe"
-            app:tabBackground="@drawable/selector_dot"
-            app:tabGravity="center"
-            app:tabIndicatorGravity="center"
-            app:tabIndicatorHeight="0dp" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/good_btn"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="155dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/selector_board_good_btn"
-            android:drawableLeft="@drawable/ic_heart"
-            android:drawableTint="@drawable/selector_board_nav_text"
-            android:fontFamily="@font/spoqahansansneobold"
-            android:gravity="center"
-            android:paddingStart="50dp"
-            android:paddingEnd="50dp"
-            android:text="991"
-            android:textColor="@drawable/selector_board_nav_text"
-            android:textSize="14sp"
-            app:backgroundTint="@null"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewpager_recipe"
-            tools:ignore="RtlSymmetry" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp">
+                <ImageView
+                    android:id="@+id/board_profile_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/img_board_profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/scrap_btn"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="155dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/selector_board_good_btn"
-            android:drawableLeft="@drawable/ic_scrap"
-            android:drawableTint="@drawable/selector_board_nav_text"
-            android:fontFamily="@font/spoqahansansneobold"
-            android:gravity="center"
-            android:paddingStart="50dp"
-            android:paddingEnd="50dp"
-            android:text="32"
-            android:textColor="@drawable/selector_board_nav_text"
-            android:textSize="14sp"
-            app:backgroundTint="@null"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewpager_recipe" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/board_read_writer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/spoqahansansneoregular"
+                    android:text="구운오니"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.009"
+                    app:layout_constraintStart_toEndOf="@+id/board_profile_img"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/board_read_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/spoqahansansneobold"
+                    android:text="짜파게티에 맛소금 넣으세요;;;;;;"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.166"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/board_read_writer" />
+
+                <TextView
+                    android:id="@+id/board_read_tag1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/ic_board_tag"
+                    android:fontFamily="@font/spoqahansansneobold"
+                    android:gravity="center"
+                    android:text="#존맛탱"
+                    android:textColor="#dd6e51"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/board_read_title" />
+
+                <TextView
+                    android:id="@+id/board_read_tag2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/ic_board_tag"
+                    android:fontFamily="@font/spoqahansansneobold"
+                    android:gravity="center"
+                    android:text="#짜파게티"
+                    android:textColor="#dd6e51"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toEndOf="@+id/board_read_tag1"
+                    app:layout_constraintTop_toBottomOf="@+id/board_read_title" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewpager_recipe"
+                    android:layout_width="360dp"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="25dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/board_read_tag2"
+                    tools:listitem="@layout/board_read_img_item"/>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/viewpager_tap"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="170dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="170dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewpager_recipe"
+                    app:tabBackground="@drawable/selector_dot"
+                    app:tabGravity="center"
+                    app:tabIndicatorGravity="center"
+                    app:tabIndicatorHeight="0dp" />
+
+                <Button
+                    android:id="@+id/good_btn"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="155dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/selector_board_good_btn"
+                    android:drawableLeft="@drawable/ic_heart"
+                    android:drawableTint="@drawable/selector_board_nav_text"
+                    android:fontFamily="@font/spoqahansansneobold"
+                    android:gravity="center"
+                    android:paddingStart="50dp"
+                    android:paddingEnd="50dp"
+                    android:text="991"
+                    android:textColor="@drawable/selector_board_nav_text"
+                    android:textSize="14sp"
+                    app:backgroundTint="@null"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewpager_recipe"
+                    tools:ignore="RtlSymmetry" />
+
+                <Button
+                    android:id="@+id/scrap_btn"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="155dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@drawable/selector_board_good_btn"
+                    android:drawableLeft="@drawable/ic_scrap"
+                    android:drawableTint="@drawable/selector_board_nav_text"
+                    android:fontFamily="@font/spoqahansansneobold"
+                    android:gravity="center"
+                    android:paddingStart="50dp"
+                    android:paddingEnd="50dp"
+                    android:text="32"
+                    android:textColor="@drawable/selector_board_nav_text"
+                    android:textSize="14sp"
+                    app:backgroundTint="@null"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewpager_recipe" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@color/strawberry_light">
+
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    android:id="@+id/recycler_chat_list"-->
+<!--                    android:layout_width="360dp"-->
+<!--                    android:layout_height="249dp"-->
+<!--                    android:clipToPadding="false"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:scrollbars="vertical"-->
+<!--                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+                <ListView
+                    android:layout_width="360dp"
+                    android:layout_height="300dp"
+                    android:id="@+id/chat_listView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/strawberry_light">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_chat_list"
-            android:layout_width="360dp"
-            android:layout_height="249dp"
-            android:orientation="vertical"
-            android:scrollbars="vertical"
-            android:clipToPadding="false"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="72dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
 
         <EditText
             android:id="@+id/editText_add_chat"
             android:layout_width="350dp"
             android:layout_height="50dp"
-            android:paddingStart="20dp"
-            android:inputType="textPersonName"
-            android:hint="댓글을 입력해주세요."
-            android:fontFamily="@font/spoqahansansneomedium"
-            android:textSize="14sp"
-            android:textColorHint="#BBBBBB"
             android:background="@drawable/selector_chat_add"
+            android:fontFamily="@font/spoqahansansneomedium"
+            android:hint="댓글을 입력해주세요."
+            android:inputType="textPersonName"
+            android:paddingStart="20dp"
+            android:textColorHint="#BBBBBB"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</LinearLayout>
+</RelativeLayout>
