@@ -1,11 +1,9 @@
 package com.ddk.ramenlab
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
-import androidx.navigation.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import com.ddk.ramenlab.adapter.ChatReplyAdapter
 import com.ddk.ramenlab.adapter.ChatReplyListAdapter
 import com.ddk.ramenlab.adapter.RecipeViewPagerAdapter
 import com.ddk.ramenlab.databinding.ActivityBoardReadBinding
@@ -34,10 +32,10 @@ class BoardReadActivity : AppCompatActivity() {
         TabLayoutMediator(tabLayout, viewPager2) {
                 _, _ ->
         }.attach()
-
         viewPager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
-        binding.recyclerChatList.adapter = ChatReplyListAdapter()
+
+        binding.chatListView.adapter = ChatReplyAdapter(this)
 
         // 좋아요 스크랩 버튼
         binding.goodBtn.setOnClickListener {

@@ -4,5 +4,6 @@ import androidx.annotation.DrawableRes
 
 class RecipeImage (
     @DrawableRes
-    val recipeImageResourceId: Int
+    val recipeImageResourceId: Int,
+    val content: String
 )
